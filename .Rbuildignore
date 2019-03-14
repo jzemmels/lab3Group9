@@ -1,3 +1,4 @@
+^\.travis\.yml$
 ^LICENSE\.md$
 ^README\.Rmd$
 ^lab3Group9\.Rproj$
