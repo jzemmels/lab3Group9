@@ -13,7 +13,8 @@ LazyData: true
 URL: https://github.com/jzemmels/lab3Group9
 BugReports: https://github.com/jzemmels/lab3Group9/issues
 Suggests: 
-    testthat
+    testthat,
+    covr
 Imports: 
     purrr,
     sf,
