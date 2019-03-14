@@ -1,3 +1,8 @@
+^docs$
+^_pkgdown\.yml$
+^codecov\.yml$
+^\.travis\.yml$
+^LICENSE\.md$
 ^README\.Rmd$
 ^lab3Group9\.Rproj$
 ^\.Rproj\.user$
