@@ -1,9 +1,5 @@
 Package: lab3Group9
-<<<<<<< HEAD
-Title: Lab 3 Group 9 solution
-=======
 Title: Lap Group 9's Package for Lab 3
->>>>>>> b46cee6090929a756158cb899bb115b731d8d5ab
 Version: 0.0.0.9000
 Authors@R: 
     c(
