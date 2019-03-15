@@ -3,3 +3,29 @@ output: github_document
 ---
 
 https://github.com/jzemmels/lab3Group9
+
+function team_1 by Jing
+```{r}
+library(tidyverse)
+library(purrr)
+library(sf)
+
+team_1 <- function(file, tolerance){
+ozbig <- read_sf(file)
+oz_st <- maptools::thinnedSpatialPoly(as(ozbig, "Spatial"), tolerance = tolerance, minarea = 0.001, topologyPreserve = TRUE)
+oz <- st_as_sf(oz_st) 
+
+df.oz.purr <- oz$geometry %>%
+  map_depth(3, data.frame) %>%
+  purrr::flatten() %>%
+  purrr::flatten() %>%
+  bind_rows(.id = "group") %>%
+  rename("lat" = y, "long" = x) 
+df.oz.purr %>% 
+  ggplot(aes(x = long, y = lat, group = group)) + 
+  geom_polygon()
+}
+
+team_1("./data/gadm36_AUS_shp/gadm36_AUS_1.shp",0.1)
+
+```
