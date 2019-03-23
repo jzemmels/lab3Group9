@@ -1,17 +1,33 @@
 Package: lab3Group9
-Title: What the Package Does (One Line, Title Case)
+Title: Lap Group 9's Package for Lab 3
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
-           role = c("aut", "cre"),
-           email = "first.last@example.com")
-Description: What the package does (one paragraph).
-License: What license it uses
+    c(
+    person(given = "Jing",family = "Hou",role = c("aut"),email="jinghou@iastate.edu"),
+    person(given = "Hana",family = "Lee",role = c("aut"),email="example@example.com"),
+    person(given = "Miranda",family = "Tilton",role = c("aut"),email="tiltonm@iastate.edu"),
+    person(given = "Joe",family = "Zemmels",role = c("aut", "cre"),email="jzemmels@iastate.edu"))
+Description: S2019 STAT 585 Lab 3 Group 9's package.
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/jzemmels/lab3Group9
 BugReports: https://github.com/jzemmels/lab3Group9/issues
 Suggests: 
+<<<<<<< HEAD
     testthat
 RoxygenNote: 6.1.1
+=======
+    testthat,
+    covr
+Imports: 
+    purrr,
+    sf,
+    ggplot2,
+    dplyr,
+    magrittr,
+    checkmate,
+    maptools
+RoxygenNote: 6.1.1
+
+>>>>>>> 7abbaa820313c25fe8ba7c1a04d11b8a0551a34e

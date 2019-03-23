@@ -3,9 +3,12 @@ output: github_document
 ---
 
 https://github.com/jzemmels/lab3Group9
- 
- 
+<<<<<<< HEAD
+
+
+
 Let me see if it's working for me.
+<<<<<<< HEAD
 
 
 ### team_5 by Hana
@@ -74,3 +77,6 @@ tail(res)
 #theme_bw() +
 #theme(plot.title = element_text(hjust = 0.5))#will be deleted at the end
 ```
+=======
+>>>>>>> 567a615cf48e3aed60047922dda0a8bc53926e7a
+>>>>>>> 7abbaa820313c25fe8ba7c1a04d11b8a0551a34e
