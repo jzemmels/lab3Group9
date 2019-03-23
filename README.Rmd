@@ -7,6 +7,10 @@ https://github.com/jzemmels/lab3Group9
 
 ### team_5 by Hana
 ```{r}
+library(tidyverse)
+library(purrr)
+library(sf)
+
 team_5 <- function(file, tolerance){
   
 
@@ -55,11 +59,18 @@ ozplus <- ozplus %>%
 return(ozplus)
 }
 
+#Australia
+res <- team_5("./data/gadm36_AUS_shp/gadm36_AUS_1.shp", 0.1)
+head(res)
+tail(res)
+unique(res$territory.state)
 
+
+#USA
 res <- team_5("./data/gadm36_USA_shp/gadm36_USA_1.shp", 0.1)
 head(res)
 tail(res)
-
+unique(res$territory.state)
 #TO DRAW A MAP
 #country.name <- oz$NAME_0[1]
 #
