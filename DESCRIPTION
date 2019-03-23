@@ -14,3 +14,4 @@ URL: https://github.com/jzemmels/lab3Group9
 BugReports: https://github.com/jzemmels/lab3Group9/issues
 Suggests: 
     testthat
+RoxygenNote: 6.1.1
