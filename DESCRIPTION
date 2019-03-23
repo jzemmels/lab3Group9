@@ -13,11 +13,7 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/jzemmels/lab3Group9
 BugReports: https://github.com/jzemmels/lab3Group9/issues
-Suggests: 
-<<<<<<< HEAD
-    testthat
-RoxygenNote: 6.1.1
-=======
+Suggests:
     testthat,
     covr
 Imports: 
@@ -29,5 +25,3 @@ Imports:
     checkmate,
     maptools
 RoxygenNote: 6.1.1
-
->>>>>>> 7abbaa820313c25fe8ba7c1a04d11b8a0551a34e

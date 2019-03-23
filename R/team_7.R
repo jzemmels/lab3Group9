@@ -13,7 +13,7 @@ f <- function(dframe){
 #' @param tolerance A tolerance value
 #' @export
 #' @return A data frame of geographic information
-team_7 <- function(file = "./data/gadm36_AUS_shp/gadm36_AUS_1.shp",
+team_7 <- function(file,#="./data/gadm36_AUS_shp/gadm36_AUS_1.shp",
                    tolerance = 0.1) {
   library(magrittr)
   ozbig <- sf::read_sf(file)
