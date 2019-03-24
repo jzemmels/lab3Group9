@@ -13,6 +13,7 @@ f <- function(dframe){
 #' @param tolerance A tolerance value
 #' @export
 #' @return A data frame of geographic information
+#' @importFrom magrittr %>%
 team_7 <- function(file = "./data/gadm36_AUS_shp/gadm36_AUS_1.shp",
                    tolerance = 0.1) {
   library(magrittr)
