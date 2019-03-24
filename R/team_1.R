@@ -8,7 +8,12 @@
 #' @importFrom sf read_sf st_as_sf
 #' @importFrom dplyr bind_rows rename
 #' @importFrom purrr map_depth
-
+#' @examples
+#' australia <- team_1(file="./data/gadm36_AUS_shp/gadm36_AUS_1.shp", tolerance=0.1)
+#' library(ggplot2)
+#' australia %>%
+#' ggplot(aes(x = long, y = lat, group = group)) +
+#' geom_polygon()
 
 
 team_1 <- function(file, tolerance){
@@ -21,17 +26,26 @@ team_1 <- function(file, tolerance){
   oz_st <- maptools::thinnedSpatialPoly(as(ozbig, "Spatial"), tolerance = tolerance, minarea = 0.001, topologyPreserve = TRUE)
   oz <- sf::st_as_sf(oz_st)
 
+  state_sizes <- oz$geometry %>%
+    purrr::map(.f= ~ length(purrr::flatten(purrr::flatten(.x)))) %>%
+    purrr::flatten_int()/2 %>%
+    checkmate::assertNumeric()
+
+  states <- oz$NAME_1 %>%
+    purrr::map2(state_sizes,.f= ~ rep(.x,each=.y)) %>%
+    purrr::flatten_chr() %>%
+    checkmate::assertCharacter()
+
   df.oz.purr <- oz$geometry %>%
     purrr::map_depth(3, data.frame) %>%
     purrr::flatten() %>%
     purrr::flatten() %>%
     dplyr::bind_rows(.id = "group") %>%
-    dplyr::rename("lat" = y, "long" = x)
-  #df.oz.purr %>%
-  #  ggplot(aes(x = long, y = lat, group = group)) +
-  #  geom_polygon()
-  df.oz.purr
+    dplyr::rename("lat" = y, "long" = x)%>%
+    checkmate::assertDataFrame()
+    df.oz.purr$state <- states
+
+  return(df.oz.purr)
 
 }
 
-#team_1("./data/gadm36_AUS_shp/gadm36_AUS_1.shp",0.1)
