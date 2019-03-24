@@ -9,25 +9,45 @@ f <- function(dframe){
 
 #' Implementation of solution from team 7
 #'
-#' @param file A file
+#' @param file A country's shapefile
 #' @param tolerance A tolerance value
 #' @export
 #' @return A data frame of geographic information
 #' @importFrom magrittr %>%
 team_7 <- function(file = "./data/gadm36_AUS_shp/gadm36_AUS_1.shp",
                    tolerance = 0.1) {
-  library(magrittr)
-  ozbig <- sf::read_sf(file)
+  checkmate::assertCharacter(file)
+  checkmate::checkFileExists(file)
+  checkmate::assertNumber(tolerance)
+
+  ozbig <- sf::read_sf(file) %>%
+    checkmate::assertClass(c("sf","tbl_df","tbl","data.frame"))
   oz_st <- maptools::thinnedSpatialPoly(as(ozbig, "Spatial"),
-                                        tolerance = tolerance,
-                                        minarea = 0.001, topologyPreserve = TRUE)
-  oz <- sf::st_as_sf(oz_st)
+                                        tolerance = tolerance, minarea = 0.001,
+                                        topologyPreserve = TRUE) %>%
+    checkmate::assertClass("SpatialPolygonsDataFrame")
+  oz <- sf::st_as_sf(oz_st) %>%
+    checkmate::assertClass(c("sf","data.frame"))
+
+  state_sizes <- oz$geometry %>%
+    purrr::map(.f= ~ length(purrr::flatten(purrr::flatten(.x)))) %>%
+    purrr::flatten_int()/2 %>%
+    checkmate::assertNumeric()
+
+  states <- oz$NAME_1 %>%
+    purrr::map2(state_sizes,.f= ~ rep(.x,each=.y)) %>%
+    purrr::flatten_chr() %>%
+    checkmate::assertCharacter()
+
   ozplus <- oz$geometry %>%
     purrr::modify_depth(3,data.frame) %>%
     purrr::modify_depth(3,f) %>%
     purrr::flatten() %>%
     purrr::flatten() %>%
-    dplyr::bind_rows(.id = "group")
+    dplyr::bind_rows(.id = "group") %>%
+    checkmate::assertDataFrame()
+  ozplus$state <- states
+
   return(ozplus)
 }
 
@@ -36,10 +56,10 @@ team_7 <- function(file = "./data/gadm36_AUS_shp/gadm36_AUS_1.shp",
 #' @param ozplus an object returned from team_7()
 #' @export
 #' @return NULL
+#' @import ggplot2
 #' @examples
 #' plot_team_7(team_7())
 plot_team_7 <- function(ozplus){
-  library(ggplot2)
   ozplus %>%
     ggplot2::ggplot(aes(x = long, y = lat, group = group)) +
     geom_polygon(fill = "white", colour = "black", lwd = 1)+

@@ -3,6 +3,3 @@ output: github_document
 ---
 
 https://github.com/jzemmels/lab3Group9
- 
- 
-Let me see if it's working for me.
