@@ -8,7 +8,7 @@
 #' @importFrom sf read_sf st_as_sf
 #' @importFrom dplyr bind_rows rename
 #' @importFrom purrr map_depth
-#' @examples
+
 
 
 team_1 <- function(file, tolerance){

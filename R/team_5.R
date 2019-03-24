@@ -1,4 +1,18 @@
+#' Welcome to the function, team_5
+#'
+#' team_5 returns a data frame of the geographic information of the polygons and the additional information such as name of the country, name of the territory/state.
+#' @param file a character string of your shape file
+#' @param tolerance the value used for thinning the polygona; a single number of the tolerance value in the metric of the input object for an innerfunction called thinnedSpatialPoly{maptools}
+#' @export
+#'
+#' @return The return value is a data frame
+#'
+
+
 team_5 <- function(file, tolerance){
+  checkmate::checkFileExists(file, access = "r", extension = "shp")
+  if(checkmate::checkNumber(tolerance)!=TRUE) stop("The argument, tolerance, must be a single number")
+
   library(tidyverse)
   library(purrr)
   library(sf)
@@ -43,13 +57,11 @@ team_5 <- function(file, tolerance){
            group = factor(group)) %>%
     left_join(territory.state.info, by = "group")
 
-  #country.name <- ozplus$country[1]
-
   return(ozplus)
 }
 
 #Australia
-#res <- team_5("./data/gadm36_AUS_shp/gadm36_AUS_1.shp", 0.1)
+#res <- team_5("./data/gadm36_AUS_shp/gadm36_AUS_1.shp",0.1)
 #head(res)
 #tail(res)
 #unique(res$territory.state)
