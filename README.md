@@ -23,7 +23,7 @@ The package can be installed with
 
 Shapefile processing functions
 
-* `team_1`
+* `team_1()`
 
 * `team_5()`
 
