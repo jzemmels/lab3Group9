@@ -17,3 +17,10 @@ A data frame of geographic information
 \description{
 Wrapping the solution from team 1 into a function
 }
+\examples{
+australia <- team_1(file="./data/gadm36_AUS_shp/gadm36_AUS_1.shp", tolerance=0.1)
+library(ggplot2)
+australia \%>\%
+ggplot(aes(x = long, y = lat, group = group)) +
+geom_polygon()
+}

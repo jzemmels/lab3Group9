@@ -4,10 +4,11 @@
 \alias{team_7}
 \title{Implementation of solution from team 7}
 \usage{
-team_7(file, tolerance = 0.1)
+team_7(file = "./data/gadm36_AUS_shp/gadm36_AUS_1.shp",
+  tolerance = 0.1)
 }
 \arguments{
-\item{file}{A file}
+\item{file}{A country's shapefile}
 
 \item{tolerance}{A tolerance value}
 }

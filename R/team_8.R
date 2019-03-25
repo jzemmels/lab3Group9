@@ -7,9 +7,8 @@
 #' @param tolerance the tolerance value in the metric of the input object
 #'
 #' @examples
-#' #oz <- team_8("tests/testData/team_8_testData.shp",tolerance=.1)
-#' #oz %>%
-#' # ggplot(aes(x=long,y=lat,group=group)) + geom_path()
+#' ozfile <- system.file("extdata/team_8_testData.shp",".shp",package=lab3Group9)
+#' oz <- team_8(ozfile,tolerance=.1)
 #'
 #' @importFrom magrittr %>%
 
