@@ -18,7 +18,7 @@ The return value is a data frame
 team_5 returns a data frame of the geographic information of the polygons and the additional information such as name of the country, name of the territory/state.
 }
 \examples{
-ozfilepath <- system.file("extdata/gadm36_AUS_1.shp", ".shp", package = "lab3Group9")
+ozfilepath <- system.file("extdata/gadm36_AUS_1.shp", package = "lab3Group9")
 res <- team_5(ozfilepath,0.1)
 head(res)
 tail(res)
