@@ -6,7 +6,12 @@
 #' @export
 #'
 #' @return The return value is a data frame
-#'
+#' @examples
+#' ozfilepath <- system.file("extdata/gadm36_AUS_1.shp", ".shp", package = "mypackage")
+#' res <- team_5(ozfilepath,0.1)
+#' head(res)
+#' tail(res)
+#' unique(res$territory.state)
 
 
 team_5 <- function(file, tolerance){
