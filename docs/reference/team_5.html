@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Creates a data frame with group-indicated lat/long data — team_8 • lab3Group9</title>
+<title>Welcome to the function, team_5 — team_5 • lab3Group9</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Creates a data frame with group-indicated lat/long data — team_8" />
+<meta property="og:title" content="Welcome to the function, team_5 — team_5" />
 
-<meta property="og:description" content="From an input .shp file, will create a data frame with columns indicating the country and state/territory of which the data represent, latitude and longitude data, and the group to which the lat/long data belong. Perfectly set-up to put into a ggplot call." />
+<meta property="og:description" content="team_5 returns a data frame of the geographic information of the polygons and the additional information such as name of the country, name of the territory/state." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -99,44 +99,45 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Creates a data frame with group-indicated lat/long data</h1>
-    <small class="dont-index">Source: <a href='https://github.com/jzemmels/lab3Group9/blob/master/R/team_8.R'><code>R/team_8.R</code></a></small>
-    <div class="hidden name"><code>team_8.Rd</code></div>
+    <h1>Welcome to the function, team_5</h1>
+    <small class="dont-index">Source: <a href='https://github.com/jzemmels/lab3Group9/blob/master/R/team_5.R'><code>R/team_5.R</code></a></small>
+    <div class="hidden name"><code>team_5.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>From an input .shp file, will create a data frame with columns indicating the country and state/territory of which the data represent, latitude and longitude data, and the group to which the lat/long data belong. Perfectly set-up to put into a ggplot call.</p>
+    <p>team_5 returns a data frame of the geographic information of the polygons and the additional information such as name of the country, name of the territory/state.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>team_8</span>(<span class='no'>file</span>, <span class='kw'>tolerance</span> <span class='kw'>=</span> <span class='fl'>0.1</span>)</pre>
+    <pre class="usage"><span class='fu'>team_5</span>(<span class='no'>file</span>, <span class='no'>tolerance</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>file</th>
-      <td><p>a file path string</p></td>
+      <td><p>a character string of your shape file</p></td>
     </tr>
     <tr>
       <th>tolerance</th>
-      <td><p>the tolerance value in the metric of the input object</p></td>
+      <td><p>the value used for thinning the polygona; a single number of the tolerance value in the metric of the input object for an innerfunction called thinnedSpatialPolymaptools</p></td>
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>ozfile</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/system.file'>system.file</a></span>(<span class='st'>"extdata/ashmore_cartierIslands.shp"</span>,<span class='st'>".shp"</span>,<span class='kw'>package</span><span class='kw'>=</span><span class='no'>lab3Group9</span>)</div><div class='output co'>#&gt; <span class='error'>Error in package %in% dev_packages(): object 'lab3Group9' not found</span></div><div class='input'><span class='no'>oz</span> <span class='kw'>&lt;-</span> <span class='fu'>team_8</span>(<span class='no'>ozfile</span>,<span class='kw'>tolerance</span><span class='kw'>=</span><span class='fl'>.1</span>)</div><div class='output co'>#&gt; <span class='error'>Error in isTRUE(lhs): object 'ozfile' not found</span></div><div class='input'>
-</div></pre>
+    <p>The return value is a data frame</p>
+    
+
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-            
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+      
+      <li><a href="#value">Value</a></li>
+          </ul>
 
   </div>
 </div>

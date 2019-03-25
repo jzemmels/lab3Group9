@@ -15,7 +15,7 @@ team_8(file, tolerance = 0.1)
 From an input .shp file, will create a data frame with columns indicating the country and state/territory of which the data represent, latitude and longitude data, and the group to which the lat/long data belong. Perfectly set-up to put into a ggplot call.
 }
 \examples{
-ozfile <- system.file("extdata/team_8_testData.shp",".shp",package=lab3Group9)
+ozfile <- system.file("extdata/ashmore_cartierIslands.shp",".shp",package=lab3Group9)
 oz <- team_8(ozfile,tolerance=.1)
 
 }
