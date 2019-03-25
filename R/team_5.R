@@ -7,7 +7,7 @@
 #'
 #' @return The return value is a data frame
 #' @examples
-#' ozfilepath <- system.file("extdata/gadm36_AUS_1.shp", ".shp", package = "mypackage")
+#' ozfilepath <- system.file("extdata/gadm36_AUS_1.shp", ".shp", package = "lab3Group9")
 #' res <- team_5(ozfilepath,0.1)
 #' head(res)
 #' tail(res)
