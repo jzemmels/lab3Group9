@@ -9,7 +9,7 @@
 #' @importFrom dplyr bind_rows rename
 #' @importFrom purrr map_depth
 #' @examples
-#' ozfile <- system.file("extdata/ashmore_cartierIslands.shp",".shp",package=lab3Group9)
+#' ozfile <- system.file("extdata/ashmore_cartierIslands.shp",package="lab3Group9")
 #' oz <- team_1(ozfile,tolerance=.1)
 
 
