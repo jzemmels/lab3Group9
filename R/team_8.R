@@ -7,7 +7,7 @@
 #' @param tolerance the tolerance value in the metric of the input object
 #'
 #' @examples
-#' ozfile <- system.file("extdata/ashmore_cartierIslands.shp",".shp",package=lab3Group9)
+#' ozfile <- system.file("extdata/ashmore_cartierIslands.shp",package="lab3Group9")
 #' oz <- team_8(ozfile,tolerance=.1)
 #'
 #' @importFrom magrittr %>%

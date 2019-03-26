@@ -9,13 +9,16 @@ f <- function(dframe){
 
 #' Implementation of solution from team 7
 #'
-#' @param file A country's shapefile
+#' @param file The path to a shapefile
 #' @param tolerance A tolerance value
 #' @export
 #' @return A data frame of geographic information
 #' @importFrom magrittr %>%
-team_7 <- function(file = "./data/gadm36_AUS_shp/gadm36_AUS_1.shp",
-                   tolerance = 0.1) {
+#'
+#' @examples
+#' ozfile <- system.file("extdata/gadm36_AUS_1.shp", package = "lab3Group9")
+#' oz <- team_7(ozfile, tolerance = .1)
+team_7 <- function(file, tolerance = 0.1) {
   checkmate::assertCharacter(file)
   checkmate::checkFileExists(file)
   checkmate::assertNumber(tolerance)
@@ -58,7 +61,9 @@ team_7 <- function(file = "./data/gadm36_AUS_shp/gadm36_AUS_1.shp",
 #' @return NULL
 #' @import ggplot2
 #' @examples
-#' plot_team_7(team_7())
+#' ozfile <- system.file("extdata/gadm36_AUS_1.shp", package = "lab3Group9")
+#' oz <- team_7(ozfile, tolerance = .1)
+#' plot_team_7(oz)
 plot_team_7 <- function(ozplus){
   ozplus %>%
     ggplot2::ggplot(aes(x = long, y = lat, group = group)) +
