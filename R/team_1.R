@@ -9,11 +9,8 @@
 #' @importFrom dplyr bind_rows rename
 #' @importFrom purrr map_depth
 #' @examples
-#' australia <- team_1(file="./data/gadm36_AUS_shp/gadm36_AUS_1.shp", tolerance=0.1)
-#' library(ggplot2)
-#' australia %>%
-#' ggplot(aes(x = long, y = lat, group = group)) +
-#' geom_polygon()
+#' ozfile <- system.file("extdata/ashmore_cartierIslands.shp",".shp",package=lab3Group9)
+#' oz <- team_1(ozfile,tolerance=.1)
 
 
 team_1 <- function(file, tolerance){
